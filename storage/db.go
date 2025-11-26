@@ -46,6 +46,22 @@ type CopyTradeTarget struct {
 	CreatedAt     int64   `json:"created_at"`
 }
 
+type LimitOrder struct {
+	ID             int64   `json:"id"`
+	UserID         int64   `json:"user_id"`
+	OrderPubkey    string  `json:"order_pubkey"`
+	TokenSymbol    string  `json:"token_symbol"`
+	TokenMint      string  `json:"token_mint"`
+	Side           string  `json:"side"` // "buy" or "sell"
+	Price          float64 `json:"price"`
+	Amount         float64 `json:"amount"`
+	Status         string  `json:"status"` // "OPEN", "FILLED", "CANCELLED", "EXPIRED_REFUNDED"
+	ExpiresAt      int64   `json:"expires_at"`
+	TargetMCAP     float64 `json:"target_mcap"`
+	InitialRentSOL float64 `json:"initial_rent_sol"`
+	CreatedAt      int64   `json:"created_at"`
+}
+
 func New(path string) (*DB, error) {
 	db, err := sql.Open("sqlite3", path)
 	if err != nil {
@@ -57,7 +73,7 @@ func New(path string) (*DB, error) {
 	}
 
 	dbInstance := &DB{db}
-	
+
 	// Configure connection pool
 	db.SetMaxOpenConns(50)
 	db.SetMaxIdleConns(10)
@@ -174,6 +190,26 @@ func (db *DB) initSchema() error {
 
 	CREATE INDEX IF NOT EXISTS idx_trades_user_time 
 	ON trades(chat_id, created_at DESC);
+
+	CREATE TABLE IF NOT EXISTS limit_orders (
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		user_id INTEGER NOT NULL,
+		order_pubkey TEXT NOT NULL UNIQUE,
+		token_symbol TEXT,
+		token_mint TEXT NOT NULL,
+		side TEXT NOT NULL,
+		price REAL,
+		amount REAL,
+		status TEXT DEFAULT 'OPEN',
+		expires_at INTEGER,
+		target_mcap REAL,
+		initial_rent_sol REAL,
+		created_at INTEGER
+	);
+
+	CREATE INDEX IF NOT EXISTS idx_limit_orders_expiry 
+	ON limit_orders(expires_at, status) 
+	WHERE status = 'OPEN';
 	`
 	if _, err := db.Exec(schema); err != nil {
 		return err
@@ -710,18 +746,18 @@ func (db *DB) GetRecentTrades(userID int64, limit int) ([]*Trade, error) {
 		var t Trade
 		var confirmedAt sql.NullInt64
 		var signature sql.NullString
-		
+
 		if err := rows.Scan(&t.ID, &t.ChatID, &t.WalletAddress, &signature, &t.TradeType, &t.TokenAddress, &t.SolAmount, &t.TokenAmount, &t.PricePerToken, &t.JitoTip, &t.Status, &t.CreatedAt, &confirmedAt); err != nil {
 			return nil, err
 		}
-		
+
 		if signature.Valid {
 			t.TxSignature = signature.String
 		}
 		if confirmedAt.Valid {
 			t.ConfirmedAt = confirmedAt.Int64
 		}
-		
+
 		trades = append(trades, &t)
 	}
 	return trades, nil
@@ -737,7 +773,7 @@ func (db *DB) UpdateTradeStatus(signature, status string, confirmedAt int64) err
 // GetUsersWithSnipingEnabled returns users who have enabled sniping
 func (db *DB) GetUsersWithSnipingEnabled() ([]int64, error) {
 	// Assuming sniping setting is in user_settings or a new table.
-	// The plan didn't specify where sniping settings are stored per user, 
+	// The plan didn't specify where sniping settings are stored per user,
 	// but `config.json` has a global sniper config.
 	// If it's per user, we need a column.
 	// For now, let's return empty or implement if we added the column.
@@ -745,4 +781,45 @@ func (db *DB) GetUsersWithSnipingEnabled() ([]int64, error) {
 	// So maybe this is a global feature or we missed a migration.
 	// I'll return nil for now as the sniper feature is optional/disabled in config.
 	return nil, nil
+}
+
+// SaveLimitOrder saves a new limit order
+func (db *DB) SaveLimitOrder(order *LimitOrder) error {
+	query := `
+		INSERT INTO limit_orders (user_id, order_pubkey, token_symbol, token_mint, side, price, amount, status, expires_at, target_mcap, initial_rent_sol, created_at)
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	`
+	_, err := db.Exec(query, order.UserID, order.OrderPubkey, order.TokenSymbol, order.TokenMint, order.Side, order.Price, order.Amount, order.Status, order.ExpiresAt, order.TargetMCAP, order.InitialRentSOL, time.Now().Unix())
+	return err
+}
+
+// GetExpiredOrdersBatch retrieves a batch of expired orders
+func (db *DB) GetExpiredOrdersBatch(limit int) ([]*LimitOrder, error) {
+	query := `SELECT id, user_id, order_pubkey, token_symbol, token_mint, side, price, amount, status, expires_at, target_mcap, initial_rent_sol, created_at 
+			  FROM limit_orders 
+			  WHERE expires_at < ? AND status = 'OPEN' 
+			  LIMIT ?`
+
+	rows, err := db.Query(query, time.Now().Unix(), limit)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var orders []*LimitOrder
+	for rows.Next() {
+		var o LimitOrder
+		if err := rows.Scan(&o.ID, &o.UserID, &o.OrderPubkey, &o.TokenSymbol, &o.TokenMint, &o.Side, &o.Price, &o.Amount, &o.Status, &o.ExpiresAt, &o.TargetMCAP, &o.InitialRentSOL, &o.CreatedAt); err != nil {
+			return nil, err
+		}
+		orders = append(orders, &o)
+	}
+	return orders, nil
+}
+
+// UpdateOrderStatus updates the status of a limit order
+func (db *DB) UpdateOrderStatus(id int64, status string) error {
+	query := `UPDATE limit_orders SET status = ? WHERE id = ?`
+	_, err := db.Exec(query, status, id)
+	return err
 }
