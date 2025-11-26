@@ -1,0 +1,117 @@
+package storage
+
+import (
+	"database/sql"
+	"time"
+)
+
+// UserWallet represents a user's wallet
+type UserWallet struct {
+	ID            int
+	ChatID        int64
+	WalletAddress string
+	WalletName    string
+	IsActive      bool
+	CreatedAt     int64
+}
+
+// AddUserWallet adds a new wallet for a user
+func (db *DB) AddUserWallet(chatID int64, address, name string) error {
+	_, err := db.Exec(`
+		INSERT INTO user_wallets (chat_id, wallet_address, wallet_name, created_at)
+		VALUES (?, ?, ?, ?)
+	`, chatID, address, name, time.Now().Unix())
+	return err
+}
+
+// GetUserWallets returns all wallets for a user
+func (db *DB) GetUserWallets(chatID int64) ([]*UserWallet, error) {
+	rows, err := db.Query(`
+		SELECT id, chat_id, wallet_address, wallet_name, is_active, created_at
+		FROM user_wallets
+		WHERE chat_id = ?
+		ORDER BY created_at DESC
+	`, chatID)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var wallets []*UserWallet
+	for rows.Next() {
+		w := &UserWallet{}
+		var isActive int
+		err := rows.Scan(&w.ID, &w.ChatID, &w.WalletAddress, &w.WalletName, &isActive, &w.CreatedAt)
+		if err != nil {
+			return nil, err
+		}
+		w.IsActive = isActive == 1
+		wallets = append(wallets, w)
+	}
+	return wallets, nil
+}
+
+// GetActiveWallet returns the active wallet for a user
+func (db *DB) GetActiveWallet(chatID int64) (*UserWallet, error) {
+	w := &UserWallet{}
+	var isActive int
+	err := db.QueryRow(`
+		SELECT id, chat_id, wallet_address, wallet_name, is_active, created_at
+		FROM user_wallets
+		WHERE chat_id = ? AND is_active = 1
+		LIMIT 1
+	`, chatID).Scan(&w.ID, &w.ChatID, &w.WalletAddress, &w.WalletName, &isActive, &w.CreatedAt)
+
+	if err == sql.ErrNoRows {
+		return nil, nil // No active wallet
+	}
+	if err != nil {
+		return nil, err
+	}
+	w.IsActive = true
+	return w, nil
+}
+
+// SetActiveWallet sets a wallet as active (deactivates others)
+func (db *DB) SetActiveWallet(chatID int64, walletAddress string) error {
+	tx, err := db.Begin()
+	if err != nil {
+		return err
+	}
+	defer tx.Rollback()
+
+	// Deactivate all wallets for this user
+	_, err = tx.Exec(`UPDATE user_wallets SET is_active = 0 WHERE chat_id = ?`, chatID)
+	if err != nil {
+		return err
+	}
+
+	// Activate the specified wallet
+	_, err = tx.Exec(`
+		UPDATE user_wallets SET is_active = 1 
+		WHERE chat_id = ? AND wallet_address = ?
+	`, chatID, walletAddress)
+	if err != nil {
+		return err
+	}
+
+	return tx.Commit()
+}
+
+// RemoveUserWallet removes a wallet for a user
+func (db *DB) RemoveUserWallet(chatID int64, walletAddress string) error {
+	// First check if this is the encrypted wallet
+	encWallet, _ := db.GetEncryptedWallet(chatID)
+	if encWallet != nil && encWallet.PublicKey == walletAddress {
+		// Remove from encrypted_wallets too
+		if err := db.DeleteEncryptedWallet(chatID); err != nil {
+			return err
+		}
+	}
+
+	_, err := db.Exec(`
+		DELETE FROM user_wallets 
+		WHERE chat_id = ? AND wallet_address = ?
+	`, chatID, walletAddress)
+	return err
+}

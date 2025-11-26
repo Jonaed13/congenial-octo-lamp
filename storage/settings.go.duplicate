@@ -1,0 +1,94 @@
+package storage
+
+import (
+	"database/sql"
+	"time"
+)
+
+// UserSettings represents user trading preferences
+type UserSettings struct {
+	ChatID              int64
+	SlippageBps         int
+	MaxSlippageBps      int
+	JitoTipLamports     int64
+	PriorityFeeLamports int64
+	AutoConfirm         bool
+	CreatedAt           int64
+	UpdatedAt           int64
+}
+
+// GetUserSettings retrieves settings or creates defaults
+func (db *DB) GetUserSettings(chatID int64) (*UserSettings, error) {
+	settings := &UserSettings{}
+	err := db.QueryRow(`
+		SELECT chat_id, slippage_bps, max_slippage_bps, jito_tip_lamports, 
+		       priority_fee_lamports, auto_confirm, created_at, updated_at
+		FROM user_settings
+		WHERE chat_id = ?
+	`, chatID).Scan(
+		&settings.ChatID,
+		&settings.SlippageBps,
+		&settings.MaxSlippageBps,
+		&settings.JitoTipLamports,
+		&settings.PriorityFeeLamports,
+		&settings.AutoConfirm,
+		&settings.CreatedAt,
+		&settings.UpdatedAt,
+	)
+
+	if err == sql.ErrNoRows {
+		// Create default settings
+		return db.CreateDefaultSettings(chatID)
+	}
+	if err != nil {
+		return nil, err
+	}
+
+	return settings, nil
+}
+
+// CreateDefaultSettings creates default settings for a user
+func (db *DB) CreateDefaultSettings(chatID int64) (*UserSettings, error) {
+	now := time.Now().Unix()
+	settings := &UserSettings{
+		ChatID:              chatID,
+		SlippageBps:         500,   // 5%
+		MaxSlippageBps:      5000,  // 50%
+		JitoTipLamports:     10000, // 0.00001 SOL
+		PriorityFeeLamports: 5000,  // 0.000005 SOL
+		AutoConfirm:         false,
+		CreatedAt:           now,
+		UpdatedAt:           now,
+	}
+
+	_, err := db.Exec(`
+		INSERT INTO user_settings (chat_id, slippage_bps, max_slippage_bps, jito_tip_lamports, priority_fee_lamports, auto_confirm, created_at, updated_at)
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+	`, settings.ChatID, settings.SlippageBps, settings.MaxSlippageBps, settings.JitoTipLamports, settings.PriorityFeeLamports, 0, settings.CreatedAt, settings.UpdatedAt)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return settings, nil
+}
+
+// UpdateSlippage updates the slippage setting
+func (db *DB) UpdateSlippage(chatID int64, slippageBps int) error {
+	_, err := db.Exec(`
+		UPDATE user_settings 
+		SET slippage_bps = ?, updated_at = ?
+		WHERE chat_id = ?
+	`, slippageBps, time.Now().Unix(), chatID)
+	return err
+}
+
+// UpdateJitoTip updates the Jito tip amount
+func (db *DB) UpdateJitoTip(chatID int64, tipLamports int64) error {
+	_, err := db.Exec(`
+		UPDATE user_settings 
+		SET jito_tip_lamports = ?, updated_at = ?
+		WHERE chat_id = ?
+	`, tipLamports, time.Now().Unix(), chatID)
+	return err
+}

@@ -1,0 +1,118 @@
+package storage
+
+import (
+	"database/sql"
+	"solana-orchestrator/crypto"
+	"time"
+)
+
+// EncryptedWalletData represents an encrypted wallet in database
+type EncryptedWalletData struct {
+	ChatID              int64
+	PublicKey           string
+	EncryptedPrivateKey string
+	EncryptionSalt      string
+	Nonce               string
+	PasswordHash        string
+	MnemonicEncrypted   string
+	CreatedAt           int64
+	LastUsed            int64
+}
+
+// SaveEncryptedWallet saves an encrypted wallet to database
+func (db *DB) SaveEncryptedWallet(chatID int64, encWallet *crypto.EncryptedWallet, publicKey string, mnemonicEnc string) error {
+	_, err := db.Exec(`
+		INSERT OR REPLACE INTO encrypted_wallets 
+		(chat_id, public_key, encrypted_private_key, encryption_salt, nonce, password_hash, mnemonic_encrypted, created_at, last_used)
+		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+	`, chatID, publicKey,
+		crypto.EncodeToBase64(encWallet.EncryptedKey),
+		crypto.EncodeToBase64(encWallet.Salt),
+		crypto.EncodeToBase64(encWallet.Nonce),
+		encWallet.PasswordHash,
+		mnemonicEnc,
+		time.Now().Unix(),
+		time.Now().Unix())
+	return err
+}
+
+// GetEncryptedWallet retrieves an encrypted wallet from database
+func (db *DB) GetEncryptedWallet(chatID int64) (*EncryptedWalletData, error) {
+	wallet := &EncryptedWalletData{}
+	err := db.QueryRow(`
+		SELECT chat_id, public_key, encrypted_private_key, encryption_salt, nonce, password_hash, mnemonic_encrypted, created_at, last_used
+		FROM encrypted_wallets
+		WHERE chat_id = ?
+	`, chatID).Scan(
+		&wallet.ChatID,
+		&wallet.PublicKey,
+		&wallet.EncryptedPrivateKey,
+		&wallet.EncryptionSalt,
+		&wallet.Nonce,
+		&wallet.PasswordHash,
+		&wallet.MnemonicEncrypted,
+		&wallet.CreatedAt,
+		&wallet.LastUsed,
+	)
+
+	if err == sql.ErrNoRows {
+		return nil, nil
+	}
+	if err != nil {
+		return nil, err
+	}
+
+	return wallet, nil
+}
+
+// GetEncryptedWalletForDecryption converts stored wallet data to crypto.EncryptedWallet
+func (db *DB) GetEncryptedWalletForDecryption(chatID int64) (*crypto.EncryptedWallet, error) {
+	stored, err := db.GetEncryptedWallet(chatID)
+	if err != nil || stored == nil {
+		return nil, err
+	}
+
+	encKey, err := crypto.DecodeFromBase64(stored.EncryptedPrivateKey)
+	if err != nil {
+		return nil, err
+	}
+
+	salt, err := crypto.DecodeFromBase64(stored.EncryptionSalt)
+	if err != nil {
+		return nil, err
+	}
+
+	nonce, err := crypto.DecodeFromBase64(stored.Nonce)
+	if err != nil {
+		return nil, err
+	}
+
+	return &crypto.EncryptedWallet{
+		EncryptedKey: encKey,
+		Salt:         salt,
+		Nonce:        nonce,
+		PasswordHash: stored.PasswordHash,
+	}, nil
+}
+
+// UpdateWalletLastUsed updates the last used timestamp
+func (db *DB) UpdateWalletLastUsed(chatID int64) error {
+	_, err := db.Exec(`
+		UPDATE encrypted_wallets 
+		SET last_used = ?
+		WHERE chat_id = ?
+	`, time.Now().Unix(), chatID)
+	return err
+}
+
+// HasEncryptedWallet checks if user has an encrypted wallet
+func (db *DB) HasEncryptedWallet(chatID int64) bool {
+	wallet, _ := db.GetEncryptedWallet(chatID)
+	return wallet != nil
+}
+
+// DeleteEncryptedWallet removes an encrypted wallet (use with caution!)
+func (db *DB) DeleteEncryptedWallet(chatID int64) error {
+	_, err := db.Exec(`DELETE FROM encrypted_wallets WHERE chat_id = ?`, chatID)
+	return err
+}

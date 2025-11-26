@@ -1,0 +1,53 @@
+{
+  "moralis_api_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjUwMzdhM2ZhLTM5NmUtNGMzOS1iMmVhLTMyN2I2MGFjNzc2NiIsIm9yZ0lkIjoiNDcyMjAzIiwidXNlcklkIjoiNDg1NzU4IiwidHlwZUlkIjoiNWU4N2Q4ZjgtNTBmOC00OTVkLTk2ZmEtMTcxYmViODBjNzQ3IiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3NTg3MjQxNTIsImV4cCI6NDkxNDQ4NDE1Mn0.p75YwDO4LncVPlsEXKpz6ogebeLMDY800dMH3s1vZOg",
+  "birdeye_api_key": "ce099bc7f5804464b809e5a8f16ae970",
+  "analysis_filters": {
+    "min_winrate": 70,
+    "min_realized_pnl": 100,
+    "_comment": "min_winrate and min_realized_pnl are both percentages. Example: 100 means 100% return (doubled money), 200 means 200% return (3x), 50 means 50% return (1.5x)"
+  },
+  "scanning_limits": {
+    "max_tokens": 10,
+    "max_holders_per_token": 50
+  },
+  "data_validation": {
+    "max_realistic_winrate": 100,
+    "suspicious_winrate_threshold": 95
+  },
+  "api_settings": {
+    "max_retries": 3,
+    "token_limit": 100
+  },
+  "parallel_execution": {
+    "default_browsers": 1,
+    "max_browsers": 10,
+    "default_tabs": 5,
+    "default_pages": 5,
+    "memory_per_browser_mb": 150,
+    "enable_work_stealing": true,
+    "rate_limit_per_browser": 30,
+    "worker_timeout_seconds": 300,
+    "auto_scale": false,
+    "chrome_init_timeout_seconds": 60,
+    "chrome_init_retries": 3,
+    "worker_stagger_delay_seconds": 5.0,
+    "min_memory_mb": 500,
+    "min_cpu_available_percent": 20.0,
+    "adaptive_throttling": true,
+    "cleanup_zombie_processes": true,
+    "max_initialization_failures_percent": 50,
+    "fallback_to_single_browser": true
+  },
+  "playwright_settings": {
+    "headless": true,
+    "browser": "chromium",
+    "viewport_width": 1920,
+    "viewport_height": 1080,
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "page_timeout_ms": 60000,
+    "wait_for_stats_ms": 30000,
+    "min_wait_seconds": 10,
+    "max_wait_seconds": 16,
+    "delay_between_wallets_seconds": 1.5
+  }
+}

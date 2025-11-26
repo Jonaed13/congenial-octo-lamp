@@ -1,0 +1,504 @@
+{
+  "3wPQhXYqy861Nhoc4bahtpf7G3e89XCLfZ67ptEfZUSA": [
+    {
+      "ownerAddress": "GQdvCvY67e1JQqjn3Cpwn4bmiVC27TJw2XsfMrAZt4Jq",
+      "balance": "64556859294830",
+      "usdValue": "330258.30230214964842"
+    },
+    {
+      "ownerAddress": "2RH6rUTPBJ9rUDPpuV9b8z1YL56k1tYU6Uk5ZoaEFFSK",
+      "balance": "27372887471203",
+      "usdValue": "140033.506030106056122"
+    },
+    {
+      "ownerAddress": "GpMZbSM2GgvTKHJirzeGfMFoaZ8UR2X7F4v8vHTvxFbL",
+      "balance": "23611123831250",
+      "usdValue": "120789.1734066891375"
+    },
+    {
+      "ownerAddress": "AJ4KYkuwCPEdXQ8LkxDnfRM6T5tKSHnWApE4xvFV6FmY",
+      "balance": "22207882833404",
+      "usdValue": "113610.509594174514696"
+    },
+    {
+      "ownerAddress": "4G6FP9g1MaTJxyAHGQPRxRJzJ61gENKYYpRyjpJEeVZN",
+      "balance": "13021147346339",
+      "usdValue": "66613.247044570051386"
+    },
+    {
+      "ownerAddress": "88k4cVm2NDzduBahyyZTEb8KsKAYw9CtLLnCTTzgNDgm",
+      "balance": "10923405344989",
+      "usdValue": "55881.673055355756486"
+    },
+    {
+      "ownerAddress": "9bAwfkU2icwKmJtEdBZYjke2NkcXqcddKtTbT6nAwqfh",
+      "balance": "10000000000000",
+      "usdValue": "51157.74"
+    },
+    {
+      "ownerAddress": "ADMNVN52ZG2XkoCSyVv5bB11KPKshR5J1Hsyx8ACNQQb",
+      "balance": "9572390234544",
+      "usdValue": "48970.185079734097056"
+    },
+    {
+      "ownerAddress": "FMHBn2C5ZVJ2yH2iWUUuCZgYfd8abwLVtsHuUBYwQ8hx",
+      "balance": "8424458025112",
+      "usdValue": "43097.623328959316688"
+    },
+    {
+      "ownerAddress": "VGyqAU8btfBFYznnGAEJXqaefivcNsLX5wvZWyToanJ",
+      "balance": "7712240142736",
+      "usdValue": "39454.077603965117664"
+    },
+    {
+      "ownerAddress": "Fm63oX2v5KWg5Qv5N5kvnyNytqXwS8kvzW892HN9JyAx",
+      "balance": "7689291443702",
+      "usdValue": "39336.677246113155348"
+    },
+    {
+      "ownerAddress": "FW7iCrfcVd6WbnahbTDbHdWi8iAYVdFTU61ewkuQatEz",
+      "balance": "7618729164804",
+      "usdValue": "38975.696574346018296"
+    },
+    {
+      "ownerAddress": "FKZWXAs5p5zJFEbo83ci1qefbu3sARLXgME2Z7bDbuCW",
+      "balance": "7500000000000",
+      "usdValue": "38368.305"
+    },
+    {
+      "ownerAddress": "5sonpDr6nJMFs9UxBmNqmvmMG4wRSn1v2AqQD8PdA7JG",
+      "balance": "7416889642268",
+      "usdValue": "37943.131192783935432"
+    },
+    {
+      "ownerAddress": "6ddKsVEzQqWwtGyFtsWXTXvQr2qJEk4quHYLj4mC3P9p",
+      "balance": "7401909614499",
+      "usdValue": "37866.496756204007226"
+    },
+    {
+      "ownerAddress": "94LjhkDEsnixagDirbXkSgkWoPqAskWpETuR8jwwt6Nv",
+      "balance": "7318500000000",
+      "usdValue": "37439.792019"
+    },
+    {
+      "ownerAddress": "6nnNJL2SuwmQUk9kx8LANSTPaDdS9eeVvXUAyjYgUwsR",
+      "balance": "7315205333340",
+      "usdValue": "37422.93724896210516"
+    },
+    {
+      "ownerAddress": "AZpyMQwgrm7eN6zaZejMo2L7ryhFwCepdYmMoTA1U35u",
+      "balance": "7308833551049",
+      "usdValue": "37390.340650784146926"
+    },
+    {
+      "ownerAddress": "x7j1PKTzJKiMpx8vaaPiuZ79YJwkhZavzT6GhBZJk14",
+      "balance": "7248093007445",
+      "usdValue": "37079.60575706893743"
+    },
+    {
+      "ownerAddress": "JCD7r6NiXxGYMqk74yokuppH7NY58B5dpkGtpqYj9kR5",
+      "balance": "7200000000000",
+      "usdValue": "36833.5728"
+    },
+    {
+      "ownerAddress": "EBgbxtD96FrdvgqVtJCAnNyspLNZuz3zBukwRPQJnXNY",
+      "balance": "6946527292470",
+      "usdValue": "35536.86371310842178"
+    },
+    {
+      "ownerAddress": "5qVnXjU4KhNyt2SZfzF2JHNi6AzECSJyDccEUiidNHUT",
+      "balance": "6944674684243",
+      "usdValue": "35527.386188108549082"
+    },
+    {
+      "ownerAddress": "EpGwEYour4m8z7A5A2oB1ro4HW8vhQcp8RtEu9UJ9hU5",
+      "balance": "6894650575847",
+      "usdValue": "35271.474155003110578"
+    },
+    {
+      "ownerAddress": "7sgBS8gfr8CjRSfRDD4xHri5dDLvfT5N5gLW8wVLJXZN",
+      "balance": "6801403912746",
+      "usdValue": "34794.445300324255404"
+    },
+    {
+      "ownerAddress": "8pj3aFfrxAuoGvq4Emno9bXpTTX8bUiun8SbgW7vcyWf",
+      "balance": "6343648763629",
+      "usdValue": "32452.673410105383846"
+    },
+    {
+      "ownerAddress": "6BgwWesNjE3dNFeX2jYZpcigCUraw4UPCmwD29j2qZrR",
+      "balance": "6284126870072",
+      "usdValue": "32148.172854615715728"
+    },
+    {
+      "ownerAddress": "HXmdTodgDgpcbg9HdBsXk8kvkgCAoD6RhQKeFMiY5cc8",
+      "balance": "6200837166489",
+      "usdValue": "31722.081554558097486"
+    },
+    {
+      "ownerAddress": "E8gBvu7PekwsKZDUiesEgBxGx2nW4oHFuiuctfEzdcRM",
+      "balance": "6060989911558",
+      "usdValue": "31006.654603810715892"
+    },
+    {
+      "ownerAddress": "DAwASps15jnYPEFoWNN3mVkKnVa7j92CZSSWpRNfKfQc",
+      "balance": "6000000000000",
+      "usdValue": "30694.644"
+    },
+    {
+      "ownerAddress": "8yaYAPLsMZwqLvAx7gufEA2CpVQABjGHmY3pQpd8hSaM",
+      "balance": "5989766638109",
+      "usdValue": "30642.292433305431366"
+    },
+    {
+      "ownerAddress": "9bWWv9w1PGfmkVWBnHuxcVyR4MT8UpqhVnDbESrN3Yxp",
+      "balance": "5851132483964",
+      "usdValue": "29933.071432018448136"
+    },
+    {
+      "ownerAddress": "8YaSFhqq6Hsjk6v4m8EZDwShsxU9d1wPVc6gi3rnaANT",
+      "balance": "5829442446065",
+      "usdValue": "29822.11010007572931"
+    },
+    {
+      "ownerAddress": "BM9CcyErJcu2mjrFvUsRRrD3snGeHDDVirJLvL6EjvMN",
+      "balance": "5761938863214",
+      "usdValue": "29476.777026019737636"
+    },
+    {
+      "ownerAddress": "J9RPb7AwJVJaDw4RtcvSPmFwxKoySFYxRm3CK1HRPZPC",
+      "balance": "5737212745654",
+      "usdValue": "29350.283796685346196"
+    },
+    {
+      "ownerAddress": "4h9eyAkK84e2s8SvP8td9CibHmJUhqSpbhZGHD1FNejR",
+      "balance": "5656019577944",
+      "usdValue": "28934.917900336888656"
+    },
+    {
+      "ownerAddress": "4cXDSSuU6yX1WM9hDwtSBeuvzGtVpFmBdGoFVDHAfLZW",
+      "balance": "5579896235978",
+      "usdValue": "28545.488086714116972"
+    },
+    {
+      "ownerAddress": "FiRMHjLBbHV4f7rakRawEDGH5zFTCGfWJuAjL5JepToh",
+      "balance": "5576101142474",
+      "usdValue": "28526.073246038784876"
+    },
+    {
+      "ownerAddress": "AaAw5b9fiY7ckQaKvawiPCMM42U3BATPhvJygZFRhDtx",
+      "balance": "5531764230183",
+      "usdValue": "28299.255622900206642"
+    },
+    {
+      "ownerAddress": "5bEyamZ8vMAfEaVLvRTP8sqesMWDsDtNvM1Fa6MRB4Ru",
+      "balance": "5503516073170",
+      "usdValue": "28154.74443570518358"
+    },
+    {
+      "ownerAddress": "Gjq3J6sB9hGCv2YucQRjrDUGBUu3S2WuHpc4qa8VFeo7",
+      "balance": "5201693713092",
+      "usdValue": "26610.689453399513208"
+    },
+    {
+      "ownerAddress": "9wyaybLHuVHUt72nciCsjWPm8fFB9YKDHnPhQ8TKRNYw",
+      "balance": "4965703510098",
+      "usdValue": "25403.416908668085852"
+    },
+    {
+      "ownerAddress": "CDtbfFG95xaXH9PJsYB2839vrVKzwdTfZQwgAzVScQSo",
+      "balance": "4961112036538",
+      "usdValue": "25379.927967608150412"
+    },
+    {
+      "ownerAddress": "GACSwCEv5cDgLKvhCtqziDSaedmfm6osxNvRHy8bqsCh",
+      "balance": "4945085934574",
+      "usdValue": "25297.942051859370276"
+    },
+    {
+      "ownerAddress": "DnD7zKCaY29MCdhD1kWh7PVmJYeRwFoKug7bMoEtTfjZ",
+      "balance": "4871845972069",
+      "usdValue": "24923.262955915316406"
+    },
+    {
+      "ownerAddress": "7SWewhhYpLbYJB3E9by7KpfGEAX1ZZJZCggCw7G77jUo",
+      "balance": "4773249374319",
+      "usdValue": "24418.865044657407906"
+    },
+    {
+      "ownerAddress": "6K3FEuJ3KboVqRCYm3iqQWJ9yLW4YEtHJvuhYb53m61x",
+      "balance": "4436330858967",
+      "usdValue": "22695.266063701045458"
+    },
+    {
+      "ownerAddress": "HbgWcJhb9S6HpdsEYvLuRe3CfRKANxcLCR2akAQ4GVnn",
+      "balance": "4314033803241",
+      "usdValue": "22069.621965741423534"
+    },
+    {
+      "ownerAddress": "BsNUr4aKFcd957m6Jy3jfUJrwPJseCMPACdKBaQdJWdR",
+      "balance": "4284531665476",
+      "usdValue": "21918.695696418818424"
+    },
+    {
+      "ownerAddress": "3p3QEyUgf9iganEv3tPcY6asabHazswnsBRfYh3Q6S4E",
+      "balance": "4274754665233",
+      "usdValue": "21868.678772777685342"
+    },
+    {
+      "ownerAddress": "AXPQxnG8AYf54NzhKNx2BQQQ3Syzt1JmoMnubGhsd1ng",
+      "balance": "4235000000000",
+      "usdValue": "21665.30289"
+    },
+    {
+      "ownerAddress": "Cdwu8SW93FCHDgHbfT9cs6CeXpNB3b4wjcBESisz4LTq",
+      "balance": "4175000000000",
+      "usdValue": "21358.35645"
+    },
+    {
+      "ownerAddress": "4tcxfhGjSzZuKtZXUJaieqDRxjvhcoA4wHDj6bzvBtL6",
+      "balance": "4084853297327",
+      "usdValue": "20897.186292279736098"
+    },
+    {
+      "ownerAddress": "hroWNtH5HSMAy2PWoJDVFbWjpQ21S93JW7U7Dx89d74",
+      "balance": "4070424511479",
+      "usdValue": "20823.371884786969746"
+    },
+    {
+      "ownerAddress": "Bz4QxifxZaW5BsGwjAaYjHm62xWAKtqf8iQW55DdiNeP",
+      "balance": "4027565634059",
+      "usdValue": "20604.115554012546666"
+    },
+    {
+      "ownerAddress": "Dk4NDz2Sk4xqXTYcSLpzDmEJqrtK7chdZneMaBttCBHU",
+      "balance": "3800000000000",
+      "usdValue": "19439.9412"
+    },
+    {
+      "ownerAddress": "AsEYYAK7sdzbq5nnJGCyHcXVch9tbmcDwbjdARrzkMz2",
+      "balance": "3755563403003",
+      "usdValue": "19212.613612434269322"
+    },
+    {
+      "ownerAddress": "6wb8JhgWhKkAFGJWpC87G7pNzP9Pq8xvGP82BNppww7a",
+      "balance": "3633298432427",
+      "usdValue": "18587.133654850803498"
+    },
+    {
+      "ownerAddress": "qwxE5KCPYXEgUFB8dMuDCRLxz9ZNknyQ6EZLbpx8uGu",
+      "balance": "3562078164288",
+      "usdValue": "18222.786858832278912"
+    },
+    {
+      "ownerAddress": "971r6LdYfitXPuEWLiScFtGM5qjRNoT9nLUE6Vs4Jcf8",
+      "balance": "3547790187520",
+      "usdValue": "18149.69279876994048"
+    },
+    {
+      "ownerAddress": "AemyykLbsb2aHScKb6UaSq4kd6Ci66JU6ABL9EhABgLf",
+      "balance": "3417110831241",
+      "usdValue": "17481.166745581095534"
+    },
+    {
+      "ownerAddress": "2oVoKpckWEevjNgNkfhsiCJYCrSY7e8Hna4KY1oEXgrg",
+      "balance": "3059232257482",
+      "usdValue": "15650.340842787721068"
+    },
+    {
+      "ownerAddress": "GSY7Be1EGnjW39kPtYfUV6Nfin7X61RFqKBGAy6YmMkf",
+      "balance": "2945740791389",
+      "usdValue": "15069.744151327270086"
+    },
+    {
+      "ownerAddress": "4rXiu7Vw9rdpHHKFLBGzzTWTWpgHVmUq2jJEKCt6FPGY",
+      "balance": "2933654271884",
+      "usdValue": "15007.912249093098216"
+    },
+    {
+      "ownerAddress": "6uHwTM55oDDcaHgLscsdckzRTBqeo7fwp3RDkph9dwZt",
+      "balance": "2866774162904",
+      "usdValue": "14665.768726456047696"
+    },
+    {
+      "ownerAddress": "J3geUTyfNNzZG8y9Pe68CwTvuez5jqCfb43U36zJH1BA",
+      "balance": "2799999996075",
+      "usdValue": "14324.16717992058705"
+    },
+    {
+      "ownerAddress": "5kecfJyfpirQuw6D3rPTxHteiQpUhVJgJBvzwdpBfVPK",
+      "balance": "2606335993441",
+      "usdValue": "13333.425910509638334"
+    },
+    {
+      "ownerAddress": "77pMPDby9gmi3YWyg9iFbQovqTid8empuUTMhWTA4B4q",
+      "balance": "2588548051583",
+      "usdValue": "13242.426820038970242"
+    },
+    {
+      "ownerAddress": "7MvwAAwDLX5rCj3ZS7G363EAUyodW1PXWyxx3Pow7HKG",
+      "balance": "2524216828677",
+      "usdValue": "12913.322822508250998"
+    },
+    {
+      "ownerAddress": "HjHjbFWT1fxRvmxXDn1xkj8TgzH1RQjfdKsVDRHABTxR",
+      "balance": "2476931451909",
+      "usdValue": "12671.421521458312566"
+    },
+    {
+      "ownerAddress": "5FWyGNLTSCTdXSyX5H5rMGEajBjF4t6cdCgeAV5Ud9JT",
+      "balance": "2472234946471",
+      "usdValue": "12647.395261047733554"
+    },
+    {
+      "ownerAddress": "7WV4Zevg9RWTysHUBRGfDbSc7f4yQMdJidtUCMrgH2bg",
+      "balance": "2408024749954",
+      "usdValue": "12318.910407171174396"
+    },
+    {
+      "ownerAddress": "Fv7Vfo2cLGxZfKGaUzNZK4JE6az7ou6xQ69QhaMD4Yqa",
+      "balance": "2371465806152",
+      "usdValue": "12131.883113001441648"
+    },
+    {
+      "ownerAddress": "FsiTAd1PfuDqL2efFo1DSntnbFAAVSTDfgJretu8rvZ5",
+      "balance": "2306350361069",
+      "usdValue": "11798.767212047402406"
+    },
+    {
+      "ownerAddress": "f1SgsCoEPRETo2hPaJrz1tdHUb2QNaqZ7kXLyu2hDW7",
+      "balance": "2249999997535",
+      "usdValue": "11510.49148738961709"
+    },
+    {
+      "ownerAddress": "3hSxJJHRzy751oWKdMXX3dXMAe8QNU7Sc85VWNSNdf1m",
+      "balance": "2230333915715",
+      "usdValue": "11409.88425733298841"
+    },
+    {
+      "ownerAddress": "F8sefNx4rjr1kGpZpD51o1xwYtpnGPmGoTUYLeePCMpb",
+      "balance": "2197250518674",
+      "usdValue": "11240.637074918963676"
+    },
+    {
+      "ownerAddress": "ByS48fQwdV13L1xWMvoYh7teJjassXGw6wwRtCAUexE5",
+      "balance": "2174983248826",
+      "usdValue": "11126.722754779581324"
+    },
+    {
+      "ownerAddress": "6oPQQdpHKq5zVY64oRv6yYjEH4ESnY2F6tFdbpGu4z6f",
+      "balance": "2162656260246",
+      "usdValue": "11063.660667103720404"
+    },
+    {
+      "ownerAddress": "3gV7DsysUAYwdpc1L1JDPKVT858dSf5PoA3JDcrMc3cE",
+      "balance": "2098889839874",
+      "usdValue": "10737.446071691572476"
+    },
+    {
+      "ownerAddress": "4ZZfa4BKu6NoTxS1qyzxHKTdcWL32Ptg9eNdAS97X6QS",
+      "balance": "2074950243056",
+      "usdValue": "10614.976504719565344"
+    },
+    {
+      "ownerAddress": "63SHL61eVFKrqWb5PSN6GG5iJjeXjVdaAA3NE3LFEDL6",
+      "balance": "2011065121277",
+      "usdValue": "10288.154659735723398"
+    },
+    {
+      "ownerAddress": "Dku1imD78PuP8oH12NAJjVb7n9KVpeiXw8G6xqLZE2md",
+      "balance": "2003500201621",
+      "usdValue": "10249.454240447469654"
+    },
+    {
+      "ownerAddress": "Dg9Jjq7ExdM97vb9Hr7rSDwBr7n5ES1pWBX3naK46Qgu",
+      "balance": "2000791227457",
+      "usdValue": "10235.595740852606718"
+    },
+    {
+      "ownerAddress": "2nrHJcwyRn5GGS8jsbaRDpU7MxeXKjBuQdr8TkJPLgTt",
+      "balance": "1968431497975",
+      "usdValue": "10070.05067812155765"
+    },
+    {
+      "ownerAddress": "CzvTxSTVckoAFiU75mTApKHyAc6qTJUv8wLU64FbiiE9",
+      "balance": "1922264913222",
+      "usdValue": "9833.872864173363828"
+    },
+    {
+      "ownerAddress": "yDyWZcLT5uSo1jKR8JStAhYExKiKQDASqjHayjyfn9j",
+      "balance": "1895714030338",
+      "usdValue": "9698.044547838351612"
+    },
+    {
+      "ownerAddress": "391nE6cRaZKqum9CU2nicgwJjqD1UFZ2RTDD8k7kTVwA",
+      "balance": "1880938290716",
+      "usdValue": "9622.455203249354184"
+    },
+    {
+      "ownerAddress": "3c4FdDLFAyJkUedUB5wJtR6Nh15RkHPK5EQQxfpNLqe1",
+      "balance": "1870009633677",
+      "usdValue": "9566.546663714320998"
+    },
+    {
+      "ownerAddress": "AkrYVFAcsBZGHzFnFvWGWHXCmf1BQWzqZ3WoXg1otwip",
+      "balance": "1856277177700",
+      "usdValue": "9496.2945224710398"
+    },
+    {
+      "ownerAddress": "3w3c4CGvYLPEDWYtg5bc4o2ji8nQvKw5rkxVtfSo2dxf",
+      "balance": "1854018707729",
+      "usdValue": "9484.740700513617246"
+    },
+    {
+      "ownerAddress": "JxrvsNffYGJmxPSSeQGZLRFrxydEoKP9u7rB6yDvQFg",
+      "balance": "1833584831130",
+      "usdValue": "9380.20560588924462"
+    },
+    {
+      "ownerAddress": "2dFGceNVyyWysh6X4Fpwu8PKfX2PkkB2qpMkspoobiC3",
+      "balance": "1797577801552",
+      "usdValue": "9196.001780156881248"
+    },
+    {
+      "ownerAddress": "J2W1vhCNYDUGWPp2dM6fTDcaV2nhjBcEXSUHocqcMuDP",
+      "balance": "1793630424066",
+      "usdValue": "9175.807889045817084"
+    },
+    {
+      "ownerAddress": "H4osqQzpS9NMywUemGAdytntePEtP1ZvSrsSoW1bVRRC",
+      "balance": "1790834369124",
+      "usdValue": "9161.503903870961976"
+    },
+    {
+      "ownerAddress": "6nTR75Hn81Xwf2zZ5yMUMLejxXR7EqAkhxDjNb7rUWrY",
+      "balance": "1786114457254",
+      "usdValue": "9137.357901444124596"
+    },
+    {
+      "ownerAddress": "EfGuRVM5UsWtY5VMaKdRGaDhnx2sLuZtuZDk9YYbinED",
+      "balance": "1785462327034",
+      "usdValue": "9134.021750620034316"
+    },
+    {
+      "ownerAddress": "As6CELPMBzJBLkSYKeHNS2ZLNy2uqV69nGaBdeGiuwSB",
+      "balance": "1756996964956",
+      "usdValue": "8988.399391400815944"
+    },
+    {
+      "ownerAddress": "HQubkXmvBvDeG175Ky9uiHeuaSjz35thKJNyaq4KFUPH",
+      "balance": "1717223183755",
+      "usdValue": "8784.92571565105137"
+    },
+    {
+      "ownerAddress": "H5ndCvKTo8qx1okcSVQt9PCf1A7V6XAvfMkmBpnGng65",
+      "balance": "1646866695824",
+      "usdValue": "8424.997823962327776"
+    },
+    {
+      "ownerAddress": "2shMGgcQSPaRMDhDB6oLPvCm6RS1CKVGVhn7AgjFFisP",
+      "balance": "1625036435636",
+      "usdValue": "8313.319146479322264"
+    }
+  ]
+}

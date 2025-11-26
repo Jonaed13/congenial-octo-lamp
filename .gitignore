@@ -1,0 +1,26 @@
+# Binaries
+bin/
+bot
+main
+monitor
+telegram-bot
+telegram-bot.backup
+orchestrator
+solana-bot
+
+# Logs and PIDs
+*.log
+*.pid
+
+# Database
+*.db
+*.sqlite
+
+# OS specific
+.DS_Store
+
+# Node modules
+node_modules/
+
+# Go
+.go/

@@ -1,0 +1,61 @@
+{
+  "moralis_api_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjhlOTUyODJiLWI1MjUtNGJjMS1hNWI1LWU2ZGY0MTU3ODJiYyIsIm9yZ0lkIjoiNDc0MDgzIiwidXNlcklkIjoiNDg3Njk1IiwidHlwZSI6IlBST0pFQ1QiLCJ0eXBlSWQiOiI2YTljZDRhZC1iNGRjLTQ1NjQtYTI1Ny01MWYxNjg1NDI0MDMiLCJpYXQiOjE3NTk2MDAwMjIsImV4cCI6NDkxNTM2MDAyMn0.ng74CPvdMxm0BWlOWj6s6bKhMR8PbcuENURb2581ocw",
+  "moralis_fallback_keys": [
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6ImU5ZDc3YWNiLWQ1OTctNGEzYS1iMzRkLTk0ZjUxMDQ3NGE1YSIsIm9yZ0lkIjoiNDgyNzQ0IiwidXNlcklkIjoiNDk2NjU2IiwidHlwZUlkIjoiNTQ1MTAxOGQtNGUyZi00MDc0LThhMjgtYjY0NDdhYTNiMmU3IiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3NjM4NzY5MDIsImV4cCI6NDkxOTYzNjkwMn0.bRHD77n1mbWHBY9P03AdMMW3X2IOtahmDFHmnp8KkCY",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Ijg5ZDJlZWE4LTVmZjItNDU0Zi04MWU3LTNkMGE2MzlhMmNiNCIsIm9yZ0lkIjoiNDgyNzQ1IiwidXNlcklkIjoiNDk2NjU3IiwidHlwZUlkIjoiNTNjMmE3YzMtNDkxNi00NzhlLWEyNGQtNTkxN2IxNGQxZjA4IiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3NjM4NzY5ODUsImV4cCI6NDkxOTYzNjk4NX0.hfa7vrXab5XDHv9dZqs63z5ofVmPqCRpdsDbQIVUoJo"
+  ],
+  "birdeye_api_key": "ce099bc7f5804464b809e5a8f16ae970",
+  "analysis_filters": {
+    "min_winrate": 25,
+    "min_realized_pnl": 25
+  },
+  "api_settings": {
+    "max_retries": 3,
+    "token_limit": 30,
+    "token_source": "moralis",
+    "fetch_traders": true
+  },
+  "trading_settings": {
+    "jito_tip_lamports": 10000,
+    "jito_block_engine_url": "https://mainnet.block-engine.jito.wtf",
+    "default_slippage_bps": 100,
+    "max_slippage_bps": 500
+  },
+  "websocket_settings": {
+    "shyft_ws_url": "wss://rpc.shyft.to?api_key=48KZbYxP-9e9SpqR",
+    "reconnect_delay_ms": 5000,
+    "ping_interval_ms": 30000
+  },
+  "shyft_api_key": "48KZbYxP-9e9SpqR",
+  "fanout_engine": {
+    "worker_count": 20,
+    "log_buffer_size": 50000,
+    "notification_rate_limit": 25,
+    "telegram_batch_size": 10,
+    "reconnect_delay_seconds": 5,
+    "max_reconnect_attempts": 10
+  },
+  "redis": {
+    "address": "localhost:6379",
+    "password": "",
+    "db": 0,
+    "pool_size": 50,
+    "min_idle_conns": 10
+  },
+  "programs": {
+    "jupiter_limit_order": "JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB",
+    "raydium_amm_v4": "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
+    "raydium_clmm": "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK"
+  },
+  "sniper": {
+    "enabled": false,
+    "min_liquidity_sol": 5.0,
+    "max_liquidity_sol": 100.0,
+    "auto_buy_amount_sol": 0.1,
+    "blacklist_tokens": []
+  },
+  "rate_limits": {
+    "shyft_rps": 20,
+    "shyft_api_per_sec": 1
+  }
+}

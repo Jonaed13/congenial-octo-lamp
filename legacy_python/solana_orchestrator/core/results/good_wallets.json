@@ -1,0 +1,14 @@
+[
+  {
+    "wallet": "11CLpwZf1cFVBE9CxjfTVwHANDZqLizRzSihEKpwKV6",
+    "winrate": "85.71%",
+    "realizedPnL": "110.08%",
+    "status": "passed"
+  },
+  {
+    "wallet": "127NpYRtkUAGsX4Fmy78Dg42LbQyghQHeAk5dvqxr86z",
+    "winrate": "72.73%",
+    "realizedPnL": "434.14%",
+    "status": "passed"
+  }
+]
