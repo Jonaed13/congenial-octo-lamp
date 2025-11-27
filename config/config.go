@@ -36,6 +36,7 @@ type APISettings struct {
 type TradingSettings struct {
 	JitoTipLamports    int64  `json:"jito_tip_lamports"`
 	JitoBlockEngineURL string `json:"jito_block_engine_url"`
+	JitoPrivateKey     string `json:"jito_private_key"`
 	DefaultSlippageBps int    `json:"default_slippage_bps"`
 	MaxSlippageBps     int    `json:"max_slippage_bps"`
 }

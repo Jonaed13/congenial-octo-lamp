@@ -239,11 +239,12 @@ check_dependencies() {
         echo -e "${YELLOW}🔴 Redis is not running. Starting Redis...${NC}"
         STARTED=false
         
-        if command -v systemctl &> /dev/null && systemctl is-system-running &> /dev/null; then
+        # Try starting without sudo first (container friendly)
+        if redis-server --daemonize yes >/dev/null 2>&1; then
+            STARTED=true
+        elif command -v systemctl &> /dev/null && systemctl is-system-running &> /dev/null; then
             sudo systemctl start redis-server && STARTED=true
-        fi
-        
-        if [ "$STARTED" = false ] && command -v service &> /dev/null; then
+        elif command -v service &> /dev/null; then
              # Try service but don't fail if it returns non-zero, check ping
              sudo service redis-server start 2>/dev/null || true
              sleep 1
